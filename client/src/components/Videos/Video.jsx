@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { fetch_video } from '../../actions/videos';
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 export const Video = ({video}) => {
   return (
@@ -13,9 +14,9 @@ export const Video = ({video}) => {
                   <div className="card-body">
                     <h5 className="card-title">{`${video.name.slice(0,24)}...`}</h5>
                     <p className="card-text">{`${video.details.slice(0,50)}...`}</p>
-                    <a href={`/playvid/${video.id}`}>
+                    <Link to={`/video/${video.id}`}>
                     <button className="btn btn-primary  w-50 my-3 mx-5">Watch Now</button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
     </>

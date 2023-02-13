@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS, FETCH_PRODUCT_BY_ID,  START_LOADING, END_LOADING } from "../constants";
+import { FETCH_PRODUCTS, FETCH_PRODUCT_BY_ID,  START_LOADING, END_LOADING, FETCH_PRODUCT_BY_SEARCH } from "../constants";
 
 export default ((state={productData: [], isLoading: true}, action)=>{
     switch (action.type) {
@@ -7,9 +7,11 @@ export default ((state={productData: [], isLoading: true}, action)=>{
         case END_LOADING:
             return {...state, isLoading: false};
         case FETCH_PRODUCTS:
-            return {...state, productData: action.data, isLoading: false};
+            return {...state, productData: action?.data, isLoading: false};
+        case FETCH_PRODUCT_BY_SEARCH:
+            return {...state, productData: action?.data, isLoading: false};
         case FETCH_PRODUCT_BY_ID:
-            return {...state, productData: action.data, isLoading: false};
+            return {...state, productData: action?.data, isLoading: false};
         default:
             return {...state};
     }

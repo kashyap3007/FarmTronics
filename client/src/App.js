@@ -1,9 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { fetch_all_articles } from "./actions/articles";
-import { login, signup } from "./actions/auth";
-import { fetch_all_products } from "./actions/products";
-import { fetch_all_videos } from "./actions/videos";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./components/Auth/Login";
 import { Register } from "./components/Auth/Register";
@@ -21,23 +16,6 @@ import Contact from './components/Contact/Contact';
 import Bot from './components/Bot/Bot';
 
 function App() {
-  const dispatch= useDispatch();
-  const data={
-    name: "nilesh", username: "nilesh0203", password: "123543"
-  }
-  function auth (){
-    dispatch(login(data));
-    dispatch(signup(data));
-  }
-  function product (){
-    dispatch(fetch_all_products());
-  }
-  function article (){
-    dispatch(fetch_all_articles());
-  }
-  function video (){
-    dispatch(fetch_all_videos());
-  }
   return (
     <>
         <BrowserRouter>

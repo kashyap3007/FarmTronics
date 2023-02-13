@@ -2,7 +2,7 @@ const Articles = require("../../models/articles");
 
 const getArticle = async (req, res) => {
   try {
-    console.log("we got it");
+    // console.log("we got it");
     let data = await Articles.find();
     data = data.map((info) => {
       const src = `data:image/png;base64,${Buffer.from(

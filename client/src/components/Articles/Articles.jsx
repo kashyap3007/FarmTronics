@@ -20,19 +20,18 @@ export const Articles = () => {
     setInputText("");
   }
   useEffect(()=>{
-    console.log("here you go");
+    console.log("I m run again");
     dispatch(fetch_all_articles());
   },[])
-  dispatch(fetch_all_articles());
   return (
     <>
     <Navbar/>
     <Inner title="Articles" current="Articles"/>
     <div className="main-container overflow-hidden ">
-        <h3 className=' heading text-light text-center pt-2 '>Here are the articles that will help you.</h3>
-        <p className='quote text-center text-light pb-2'>"I have always imagined that Paradise will be a kind of a Library."</p>
+        <h3 className='heading text-center pt-2 '>Articles Related to Farming</h3>
+        <p className='quote text-center desc pb-2'>"I have always imagined that Paradise will be a kind of a Library."</p>
         <form action="#" onSubmit={search} className='d-flex  justify-content-center my-3'>
-          <input type="search" name="search" onChange={changeHandler} value={inputText} id="search"  placeholder="Search for books"/>
+          <input type="search" className="inp-border"  name="search" onChange={changeHandler} value={inputText} id="search"  placeholder="Search for books"/>
           <button type='submit' className='btn btn-primary' >Search</button>
         </form>
       <div className="row gy-5 justify-content-center">

@@ -2,7 +2,7 @@ const Product = require("../../models/Product");
 
 const getoneProduct = async (req, res) => {
   try {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     let info = await Product.findById(req.params.id);
 
     const src = `data:image/png;base64,${Buffer.from(info.image.data).toString(

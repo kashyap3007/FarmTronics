@@ -2,7 +2,7 @@ const Articles = require("../../models/articles");
 
 const getoneArticle = async (req, res) => {
   try {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     let info = await Articles.findById(req.params.id);
     const src = `data:image/png;base64,${Buffer.from(info.image.data).toString(
       "base64"

@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
     const navigate= useNavigate();
- // When the user scrolls down 20px from the top of the document, show the button
- setTimeout(()=>{
-    themeChanger();
- }, 1000);
+//  When the user scrolls down 20px from the top of the document, show the button
+    setTimeout(()=>{
+        themeChanger();
+    }, 2000);
  const themeChanger=
  ()=>{
      const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
@@ -32,68 +32,64 @@ export default function Navbar() {
 toggleSwitch.addEventListener("click", myswitchTheme, false);
 }
 
-window.addEventListener('load', themeChanger );
-window.onscroll = function() {
-    scrollFunction()
-};
+ window.addEventListener('load', themeChanger );
+  window.onscroll = function() {
+      scrollFunction()
+  };
+ function scrollFunction() {
+     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+         document.getElementById("movetop").style.display = "block";
+     } else {
+         document.getElementById("movetop").style.display = "none";
+     }
+ }
+ window.addEventListener("scroll" , scrollFunction);
 
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("movetop").style.display = "block";
-    } else {
-        document.getElementById("movetop").style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
+// // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
 
-    $(window).on("scroll", function() {
-        var scroll = $(window).scrollTop();
+     $(window).on("scroll", function() {
+         var scroll = $(window).scrollTop();
 
-        if (scroll >= 80) {
-            $("#site-header").addClass("nav-fixed");
-        } else {
-            $("#site-header").removeClass("nav-fixed");
-        }
-    });
-
-    //Main navigation Active Class Add Remove
-    $(".navbar-toggler").on("Click", function() {
-        $("header").toggleClass("active");
-    });
-    $(document).on("ready", function() {
-        if ($(window).width() > 991) {
-            $("header").removeClass("active");
-        }
-        $(window).on("resize", function() {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-        });
-    });
-
-    $(function() {
-        //  $('.navbar-toggler').addEventListener('click', ()=>{
-        //      $('body').toggleClass('noscroll');
-        //  })
-         $('.navbar-toggler').click(function() {
-            $('body').toggleClass('noscroll');
-         })
-    });
-
-  return (
+         if (scroll >= 80) {
+             $("#site-header").addClass("nav-fixed");
+         } else {
+             $("#site-header").removeClass("nav-fixed");
+         }
+     })
+     //Main navigation Active Class Add Remove
+     $(".navbar-toggler").on("Click", function() {
+         $("header").toggleClass("active");
+     });
+     $(document).on("ready", function() {
+         if ($(window).width() > 991) {
+             $("header").removeClass("active");
+         }
+         $(window).on("resize", function() {
+             if ($(window).width() > 991) {
+                 $("header").removeClass("active");
+             }
+         });
+     })
+     $(function() {
+         //  $('.navbar-toggler').addEventListener('click', ()=>{
+         //      $('body').toggleClass('noscroll');
+         //  })
+          $('.navbar-toggler').click(function() {
+             $('body').toggleClass('noscroll');
+          })
+     }) 
+    return (
     <div>
        <header id="site-header" className="fixed-top">
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light stroke">
-                <h1><a className="navbar-brand" href="" style={{color:"black"}}>
+                <h1><link className="navbar-brand" href="" style={{color:"black"}}/>
                         Farm<span className="sub-color">Tronix</span>
-                    </a></h1>
+                    </h1>
                 <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon fa icon-expand fa-bars"></span>
                     <span className="navbar-toggler-icon fa icon-close fa-times"></span>
@@ -137,8 +133,8 @@ function topFunction() {
                             <label className="theme-switch" htmlFor="checkbox">
                                 <input type="checkbox" id="checkbox"/>
                                 <div className="mode-container">
-                                    <i className="gg-sun"></i>
-                                    <i className="gg-moon"></i>
+                                    <i className="gg-sun" onClick={()=>{}} ></i>
+                                    <i className="gg-moon" onClick={()=>{}} ></i>
                                 </div>
                             </label>
                         </div>

@@ -12,11 +12,7 @@ export const getarticle= async(id)=> {return await API.get(`/article/get/${id}`)
 export const postarticle= async(data)=>{return await API.post("/article/post", data)}
 
 //videos
-export const getvideos= async()=>{
-    const data= await API.get("/video/get")
-    console.log(data);
-    return data;
-};
+export const getvideos= async()=>{return await API.get("/video/get")};
 export const getvideo= async(id)=> {return await API.get(`/video/get/${id}`)};
 
 //products

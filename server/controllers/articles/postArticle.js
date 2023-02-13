@@ -17,7 +17,7 @@ const postArticle = async (req, res) => {
 
     const dataToSave = await data.save();
     res.status(200).json(data);
-    console.log("Success!");
+    // console.log("Success!");
   } catch (err) {
     res.status(400).send(err);
   }
