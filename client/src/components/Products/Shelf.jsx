@@ -7,11 +7,17 @@ import './styles.css';
 export const Shelf = () => {
     const {productData, isLoading}= useSelector((state)=>state.products)
     console.log(productData);                                    
-    if(!productData.length && !isLoading) return "No Posts";
+    if(!productData.length && !isLoading) {
+       return (<>
+        <div className='second-container mt-5 p-4'>
+        <p className='text-center text-color'>No Products Found</p>
+        </div>
+        </>);
+    };
   return (
     <>
       <div className="col-9">
-      <div className="p-3 shelf">
+      <div className="p-3 shelf Row">
         <div className="container">
             <div className="row gy-5">
                 {productData?.length===0? (<>

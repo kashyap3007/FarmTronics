@@ -12,26 +12,26 @@ export const PlayBook = () => {
     const dispatch= useDispatch();
     const {booksData, isLoading}= useSelector((state)=> state.library);
     const {id}= useParams();
+    console.log(booksData);
     useEffect(()=>{
       dispatch(fetch_book(id));
     },[id])
-    console.log(booksData);
     if(!booksData) return null;
   return (
     <>
     {/* <Navbar/> */}
     <div className="hero-container">
         {isLoading? (<>
-          <h3 className='text-center text-light'>Wait a Moment</h3>
+          <h3 className='text-center  '>Wait a Moment</h3>
           <Loading/>
         </>):(<>
-          <h2 className='heading text-center mt-3 mb-1 text-light' > {booksData.name}</h2>
-        <h6 className="subHeading text-center text-light mb-5">{booksData.Author}</h6>
-        <p className='text-light text-center'>Edition:- {booksData.year} </p>
+          <h2 className='heading text-center mt-3 mb-1  ' > {booksData.name}</h2>
+        <h6 className="subHeading text-center   mb-5">{booksData.Author}</h6>
+        <p className='  text-center'>Edition:- {booksData.year} </p>
         <img src={booksData.src} className="mx-auto d-block"  alt="..."/>
         <div className="container center">
-          <h2  className='mt-4 details text-light' >Details:</h2>
-        <p className='desc text-light p-2'> {booksData.details} </p>
+          <h2  className='mt-4 details  ' >Details:</h2>
+        <p className='desc   p-2'> {booksData.details} </p>
         </div>
         </>)}
     </div>

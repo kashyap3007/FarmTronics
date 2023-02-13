@@ -11,9 +11,12 @@ Author URL: http://w3layouts.com
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+    --bg-color: "white";
+    --text-color: "black";
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
-    --bs-purple: #6f42c1 --bs-pink: #d63384;
+    --bs-purple: #6f42c1;
+     --bs-pink: #d63384;
     --bs-red: #dc3545;
     --bs-orange: #fd7e14;
     --bs-yellow: #ffc107;
@@ -18220,6 +18223,7 @@ a.read:hover span.fas {
 }
 
 .gg-sun {
+    cursor: pointer;
     position: relative;
     transform: scale(var(--ggs, 1));
     height: 24px;
@@ -18229,7 +18233,9 @@ a.read:hover span.fas {
     border: 6px solid transparent;
 }
 
+
 .gg-moon {
+    cursor: pointer;
     overflow: hidden;
     position: relative;
     transform: rotate(-135deg) scale(var(--ggs, 1));
