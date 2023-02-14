@@ -31,7 +31,7 @@ export const PlayArticle = () => {
       </>):(<>
       <div className="second-container">
         <h2 className='heading text-center mt-3 mb-5  ' > {articleData.name}</h2>
-        <img src={articleData.src} className="mx-auto d-block"   alt="..."/>
+        <img src={articleData.src} className="mx-auto d-block image"   alt="..."/>
         <div className="container center">
           <h2  className='mt-4 details  ' >Details:</h2>
         <p className='desc   p-2'> {articleData.details} </p>

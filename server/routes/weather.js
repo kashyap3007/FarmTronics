@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const router = express.Router();
+// import fetch from 'node-fetch';
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 var coolSeason = [
   {
@@ -89,32 +91,29 @@ router.post("/post", (req, res) => {
     const city = req.body.city;
     const unit = "metric";
     const ApiKey = process.env.ApiKey;
+    const url =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=${unit}`;
     let temp = 0;
-    const url =
-      "http://api.openweathermap.org/data/2.5/weather?q=" +
-      city +
-      "&appid=" +
-      ApiKey +
-      "&units=" +
-      unit +
-      "";
-
+    // console.log(url);
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         // res.status(200).json(data.main.temp);
         temp = data.main.temp;
         if (temp < 20) {
-          return res.status(200).json(coolSeason);
+          const data= coolSeason;
+          res.status(200).json({data, city: req.body.city});
         } else if (temp >= 20 && temp <= 30) {
-          return res.status(200).json({moderateSeason});
+          const data= moderateSeason;
+           res.status(200).json({data, city: req.body.city});
         } else {
-          return res.status(200).json({warmSeason});
+          const data= warmSeason
+           res.status(200).json({data, city: req.body.city});
         }
       })
       .catch((err) => console.log(err));
   } catch (err) {
-    res.status(400).send("SOmething went wrong");
+    console.log(err);
+    res.status(400).json({message: "Something went wrong"});
   }
 });
 

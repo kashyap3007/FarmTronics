@@ -23,6 +23,10 @@ const productSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
+  likes:{
+    type:[String],
+    default: []
+  }
 });
 
 module.exports = mongoose.model("Article", productSchema);

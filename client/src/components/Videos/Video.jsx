@@ -10,7 +10,7 @@ export const Video = ({video}) => {
   return (
     <>
         <div className="card" style={{width: "18rem"}}>
-                    <ReactPlayer url={video.url} className="video"  width="100%" height={"100%"} controls="control"/>
+                    <ReactPlayer url={video.url} className="video"  width="100%" height={"100%"} controls={true}/>
                   <div className="card-body">
                     <h5 className="card-title">{`${video.name.slice(0,24)}...`}</h5>
                     <p className="card-text">{`${video.details.slice(0,50)}...`}</p>

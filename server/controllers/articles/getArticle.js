@@ -4,6 +4,7 @@ const getArticle = async (req, res) => {
   try {
     // console.log("we got it");
     let data = await Articles.find();
+    // console.log(data);
     data = data.map((info) => {
       const src = `data:image/png;base64,${Buffer.from(
         info.image.data
@@ -11,6 +12,7 @@ const getArticle = async (req, res) => {
       return {
         id: info._id,
         src,
+        likes: info.likes,
         name: info.name,
         details: info.details,
         category: info.category,

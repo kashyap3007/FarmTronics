@@ -16,7 +16,7 @@ const userRegister = async (req, res) => {
       mobile: req.body.mobile,
     });
     const dataToSave = await data.save();
-    res.status(200).json(data);
+    res.status(200).json(dataToSave);
   } catch (err) {
     return res.status(500).send("Something went wrong. Please try again");
   }

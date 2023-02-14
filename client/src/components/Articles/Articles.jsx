@@ -20,7 +20,7 @@ export const Articles = () => {
     setInputText("");
   }
   useEffect(()=>{
-    console.log("I m run again");
+    // console.log("I m run again");
     dispatch(fetch_all_articles());
   },[])
   return (
@@ -34,8 +34,8 @@ export const Articles = () => {
           <input type="search" className="inp-border"  name="search" onChange={changeHandler} value={inputText} id="search"  placeholder="Search for books"/>
           <button type='submit' className='btn btn-primary' >Search</button>
         </form>
-      <div className="row gy-5 justify-content-center">
-        <ArticleRow/>
+    <div className="row gy-5 justify-content-center">
+        <ArticleRow key={1} />
       </div>
     </div>
     <Footer/>

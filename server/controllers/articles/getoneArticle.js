@@ -10,6 +10,7 @@ const getoneArticle = async (req, res) => {
     let value = {
       id: info._id,
       src,
+      likes:info.likes,
       name: info.name,
       details: info.details,
       category: info.category,

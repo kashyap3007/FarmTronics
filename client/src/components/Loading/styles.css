@@ -35,7 +35,10 @@
         -ms-animation: cssload-rotate-one 1.15s linear infinite;
         -webkit-animation: cssload-rotate-one 1.15s linear infinite;
         -moz-animation: cssload-rotate-one 1.15s linear infinite;
-        border-bottom: 3px solid rgb(0, 0, 0);
+        /* border-bottom: 3px solid rgb(0, 0, 0); */
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        border-bottom-color: var(--text-color);
       }
     .cssload-two {
         right: 0%;
@@ -45,7 +48,10 @@
         -ms-animation: cssload-rotate-two 1.15s linear infinite;
         -webkit-animation: cssload-rotate-two 1.15s linear infinite;
         -moz-animation: cssload-rotate-two 1.15s linear infinite;
-        border-right: 3px solid rgb(0, 0, 0);
+        /* border-right: 3px solid rgb(0, 0, 0); */
+        border-right-width: 3px;
+        border-right-style: solid;
+        border-right-color: var(--text-color);
       }
       .cssload-three {
         right: 0%;
@@ -55,7 +61,10 @@
         -ms-animation: cssload-rotate-three 1.15s linear infinite;
         -webkit-animation: cssload-rotate-three 1.15s linear infinite;
         -moz-animation: cssload-rotate-three 1.15s linear infinite;
-        border-top: 3px solid rgb(0, 0, 0);
+        /* border-top: 3px solid rgb(0, 0, 0); */
+        border-top-width: 3px;
+        border-top-style: solid;
+        border-top-color: var(--text-color);
       }
   
   @keyframes cssload-rotate-one {

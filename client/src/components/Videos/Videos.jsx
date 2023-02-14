@@ -21,7 +21,7 @@ export const Videos = () => {
   useEffect(()=>{
     dispatch(fetch_all_videos());
   }, [])
-
+  let num=1;
   return (
     <>
         <Navbar/>
@@ -30,11 +30,11 @@ export const Videos = () => {
         <h3 className=' heading text-center pt-2 '>Follow this tutorial for get more yields.</h3>
         <p className='quote text-center pb-2'>"Agriculture is our wisest pursuit, because it will in the end contribute most to real wealth, good morals & happiness."</p>
         <form action="#" onSubmit={search} className='d-flex  justify-content-center my-3'>
-          <input type="search" value={inputText} onChange={changeHandler} name="search" id="search" placeholder="Search for books"/>
+          <input type="search" className='inp-border' value={inputText} onChange={changeHandler} name="search" id="search" placeholder="Search for books"/>
           <button type='submit' className='btn btn-primary' >Search</button>
         </form>
       <div className="row gy-5 justify-content-center">
-        <Playlist/>
+        <Playlist key= {2} />
       </div>
     </div>
     <Footer/>

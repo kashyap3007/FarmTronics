@@ -1,5 +1,5 @@
 import * as api from '../api';
-import { FETCH_ARTICLES, FETCH_ARTICLE_BY_ID, FETCH_ARTICLE_BY_SEARCH , START_LOADING, END_LOADING} from '../constants';
+import { FETCH_ARTICLES, FETCH_ARTICLE_BY_ID, FETCH_ARTICLE_BY_SEARCH ,FETCH_ARTICLE_BY_POST , START_LOADING, END_LOADING} from '../constants';
 
 
 export const  fetch_all_articles= ()=>async(dispatch)=>{
@@ -45,8 +45,32 @@ export const  fetch_article= (id)=>async(dispatch)=>{
 
 export const post_article= (data)=>async(dispatch)=>{
     try {
+        dispatch({type: START_LOADING});
+        console.log(data);
         const articleData= await api.postarticle(data);
-        dispatch({type: FETCH_ARTICLES, data: articleData});
+        console.log(articleData.data);
+        dispatch({type: FETCH_ARTICLE_BY_POST, data: articleData.data});
+        dispatch({type: END_LOADING});
+    } catch (error) {
+        console.log(error);
+    }
+}
+export const delete_article= (id)=>async(dispatch)=>{
+    try {
+        dispatch({type: START_LOADING});
+        const data= await api.deletearticle(id);
+        console.log(data);
+        dispatch(fetch_all_articles());
+    } catch (error) {
+        console.log(error);
+    }
+}
+export const like_article= (id, userId)=>async(dispatch)=>{
+    try {
+        dispatch({type: START_LOADING});
+        const data= await api.likearticle(id, userId);
+        // console.log(data);
+        dispatch(fetch_all_articles());
     } catch (error) {
         console.log(error);
     }

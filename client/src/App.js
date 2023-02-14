@@ -31,11 +31,14 @@ function App() {
 
             <Route path="/article" element={<Articles/>} />
             <Route path="/article/:id" element={<PlayArticle/>} />
+            
             <Route path="/video"  element={<Videos/>}/>
             <Route path="/video/:id" element={ <PlayVid/> } />
+
             <Route path="/product" element={ <Products/> } />
             <Route path="/product/:id" element={ <PlayProduct/> } />
-            <Route path="/cropsuggestion" element={<CropSuggetion/>} />
+
+            <Route path="/crops" element={<CropSuggetion/>} />
           </Routes>
         </BrowserRouter>
       </>

@@ -14,7 +14,7 @@ export const PlayVid = () => {
   const dispatch= useDispatch();
   const {videosData, isLoading}= useSelector((state)=> state.videos);
   const {id}= useParams();
-  console.log(videosData);
+  // console.log(videosData);
   // dispatch(fetch_video(id));
   useEffect(()=>{
     dispatch(fetch_video(id));

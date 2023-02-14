@@ -9,6 +9,11 @@
     color: var(--text-color);
 }
 
+.image{
+    width: 80%;
+    height: 50%;
+}
+
 .hero-container{
     margin: 0;
     /* background-color: rgb(251, 251, 251); */

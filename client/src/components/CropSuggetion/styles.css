@@ -23,20 +23,22 @@
 .card-img-top{
     width: 100%;
     height: 60%;
-    border: 2px soild black;
+    border-width: 2px;
+    border-color: var(--text-color);
+    border-style: solid;
 }
 
 .articleRow{
-    background-color: rgb(163, 207, 207);
+    background-color: var(--bg-color);
     border-radius: 15px;
 }
 .main-container{
-    background-color: rgb(157, 157, 174);
+    background-color: var(--bg-color);
 }
 .card{
     border-radius: 10px;
     margin: 0 20px;
-    background-color: rgb(214, 222, 222);
+    background-color: var(--bg-color);
 }
 .row{
     display: flex;
@@ -44,7 +46,14 @@
     justify-content: center;
 }
 .inputSearch{
-    border: 2px solid black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--text-color);
     margin-left: 12px;
     border-radius: 12px;
+}
+.inp-border{
+    border-color: var(--text-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }

@@ -70,7 +70,7 @@ io.on("connection", (socket) => {
   });
 });
 
-const Weather = require("./routes/weather");
+const Weather = require("./routes/weather.js");
 app.use("/weather", Weather);
 
 server.listen(port, () => {

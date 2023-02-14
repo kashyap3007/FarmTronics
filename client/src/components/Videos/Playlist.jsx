@@ -24,11 +24,11 @@ export const Playlist = () => {
                   <h3 className='text-center'>Wait a Moment</h3>
                   <Loading/>
                 </>):(<>
-                  {videosData?.map((video)=>{
+                  {videosData?.map((video, index)=>{
                   return(
                     <>
                       <div className="col d-flex justify-content-center align-items-center">
-                        <Video key={video.id} video={video} />
+                        <Video key={index} video={video} />
                     </div>
                     </>
                   )

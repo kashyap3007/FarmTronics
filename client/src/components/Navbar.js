@@ -2,17 +2,21 @@ import React from 'react'
 import $ from 'jquery';    
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import {logout} from '../actions/auth';
 
 export default function Navbar() {
+    const dispatch= useDispatch();
+    const user= useSelector((state)=> state.auth.authData) || JSON.parse(localStorage.getItem("user"));
+    // console.log(user);
     const navigate= useNavigate();
-//  When the user scrolls down 20px from the top of the document, show the button
     setTimeout(()=>{
         themeChanger();
-    }, 2000);
- const themeChanger=
- ()=>{
+    }, 1000);
+ const themeChanger=()=>{
      const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-     console.log(toggleSwitch);
+    //  console.log(toggleSwitch);
      const currentTheme = localStorage.getItem('theme');
      if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
@@ -118,13 +122,22 @@ function topFunction() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/product">Products</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/crops">Crops selection</Link>
+                        </li>
                     </ul>
-                    <button className="btn btn-primary" onClick={()=>{
+                    {!user?(<>
+                        <button className="btn btn-primary" onClick={()=>{
                         navigate("/register");
                     }} >Sign Up</button>
                     <button className="btn btn-primary" onClick={()=>{
                         navigate("/login")
                     }}>Log In</button>
+                    </>):(<>
+                    <button className="btn btn-primary" onClick={()=>{
+                        dispatch(logout(navigate));
+                    }}>Log Out</button>
+                    </>)}
                 </div>
                 {/* <!-- toggle switch for light and dark theme --> */}
                 <div className="mobile-position">

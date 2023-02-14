@@ -2,7 +2,7 @@ window.addEventListener("load", ()=>{
     const themeChanger=
  ()=>{
      const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-     console.log(toggleSwitch);
+    //  console.log(toggleSwitch);
      const currentTheme = localStorage.getItem('theme');
      if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);

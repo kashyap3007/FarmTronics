@@ -12,7 +12,7 @@ export const PlayBook = () => {
     const dispatch= useDispatch();
     const {booksData, isLoading}= useSelector((state)=> state.library);
     const {id}= useParams();
-    console.log(booksData);
+    // console.log(booksData);
     useEffect(()=>{
       dispatch(fetch_book(id));
     },[id])
