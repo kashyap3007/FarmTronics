@@ -30,5 +30,5 @@ Farmtronics is an innovative and user-friendly website dedicated to helping farm
 ## Contact Page
 ![image](https://github.com/0203nilesh/FarmTronics/assets/95562518/3d6fa139-0468-4cc8-8e49-f97549379f82)
 
-Thanks
+##Thanks
 
